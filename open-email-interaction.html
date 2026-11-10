@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Email Interaction</title>
+<style>
+  body {
+    margin: 0;
+    padding: 1rem;
+    background: #f5f6f7;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #131e29;
+  }
+  .sap-btn {
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid #0070f2;
+    border-radius: 8px;
+    background: #0070f2;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .1s ease;
+  }
+  .sap-btn:hover { background: #0064d9; border-color: #0064d9; }
+  .sap-btn:active { background: #fff; color: #0064d9; border-color: #0064d9; }
+  .sap-btn:focus-visible { outline: 2px solid #0032a5; outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<input type="button" class="sap-btn" value="Open Email Interaction Details" onclick="openEmailInteractionView();" />
+
+<script>
+function openEmailInteractionView() {
+    var emailPayload = {
+      operation: "navigation",
+      params: {
+        objectKey: "0669b1ed-552e-11ed-a92b-a3ede4cef827",
+        routingKey: "message",
+        viewType: "details"
+      }
+    };
+    window.parent.postMessage(emailPayload, '*');
+}
+</script>
+
+</body>
+</html>
